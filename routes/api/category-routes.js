@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { Category, Product, Tag, ProductTag } = require('../../models');
+const { findAll } = require('../../models/Product');
 
 // The `/api/categories` endpoint
 // find all categories
@@ -14,6 +15,23 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
 });
+
+// router.get('/', (req,res) => {
+//   Product.findAll({
+//     include: [
+//       { Category,
+//       {
+//         model: Tag,
+//         through: ProductTag,
+//       },
+//     ],
+//   })
+//   .then((products) => res.json(products))
+//   .catch((err) => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   });
+// });
 
 //GET single category by category id
 // find one category by its `id` value
@@ -69,7 +87,7 @@ router.delete('/:id', async (req, res) => {
     const categoryData = await Category.destroy({
       where: {
         id: req.params.id,
-      },
+      }, 
     });
 
     if (!categoryData) {

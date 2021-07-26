@@ -1,8 +1,6 @@
 # E-Commerce-Back-End 
-[Github](#) <br>
+[Github](https://github.com/anhcu/E-Commerce-Back-End) <br>
 [Video Demonstrating](https://www.youtube.com/watch?v=tbBll2XGJO4)<br>
-
-
 [Video Postman](https://www.youtube.com/watch?v=UFtZ2xDtDag)
 
 # Table of Contents
